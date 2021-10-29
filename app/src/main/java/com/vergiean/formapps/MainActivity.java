@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         EditText inputPassword = (EditText) findViewById(R.id.idInputPassword);
 
         Button btnSave = (Button) findViewById(R.id.idBtnSave);
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        /**btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("Nama", inputName.getText().toString());
@@ -29,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Phone", inputPhone.getText().toString());
                 Log.d("Password", inputPassword.getText().toString());
             }
+        });*/
+
+        btnSave.setOnClickListener(v -> {
+            Log.d("Nama", inputName.getText().toString());
+            Log.d("Email", inputEmail.getText().toString());
+            Log.d("Phone", inputPhone.getText().toString());
+            Log.d("Password", inputPassword.getText().toString());
         });
     }
 }

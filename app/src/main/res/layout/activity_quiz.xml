@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".QuizActivity">
+
+    <TextView
+        android:id="@+id/idTvSoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:text="Berapa kali tim Indonesia menjuarai piala Thomas Cup"/>
+
+    <RadioGroup
+        android:id="@+id/idRgNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/idRb10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="10 Kali"/>
+        <RadioButton
+            android:id="@+id/idRb5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="5 Kali"/>
+        <RadioButton
+            android:id="@+id/idRb13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="13 Kali"/>
+        <RadioButton
+            android:id="@+id/idRg11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="1 Kali"/>
+    </RadioGroup>
+    <Button
+        android:id="@+id/idBtnAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kirim Jawaban"/>
+</LinearLayout>

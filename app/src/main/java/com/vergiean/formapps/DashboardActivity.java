@@ -1,5 +1,7 @@
 package com.vergiean.formapps;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class DashboardActivity extends AppCompatActivity {
+
+    private ActivityResultLauncher<Intent> resultLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,21 @@ public class DashboardActivity extends AppCompatActivity {
             String number = "*123#";
             Intent callIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number));
             startActivity(callIntent);
+        });
+
+        Button buttonQuiz = (Button) findViewById(R.id.idBtnQuiz);
+        buttonQuiz.setOnClickListener(v -> {
+            Intent quizzIntent =new Intent(DashboardActivity.this, QuizActivity.class);
+            resultLauncher.launch(quizzIntent);
+        });
+        TextView tvResult = (TextView) findViewById(R.id.idTvHasil);
+        resultLauncher= registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result ->{
+           if(result.getResultCode() == QuizActivity.RESULT_CODE && result.getData() !=null){
+               int answer = result.getData().getIntExtra(QuizActivity.EXTRA_ANSWER, 0);
+               if(answer == 1){
+                   tvResult.setText("Jawaban Anda Benar");
+               }else tvResult.setText("Jawaban Anda Salah");
+           }
         });
     }
 }
